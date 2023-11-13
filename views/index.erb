@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<head>
+    <title>Sinatra Blog</title>
+</head>
+<body>
+    <h1>Posts</h1>
+    <% for post in posts do %>
+        <h3><%= post[0] %></h3>
+        <p><%= post[1] %></p>
+    <% end %>
+</body>
+</html>
