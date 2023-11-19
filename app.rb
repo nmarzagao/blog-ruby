@@ -7,9 +7,16 @@ end
 
 posts = Posts.new
 
-posts.insert 'First Post', 'This is the first Post'
-posts.insert 'Second Post', 'This is the second Post'
-
 get '/' do
     erb :index, locals: { posts: posts.get_posts }
+end
+
+post '/' do
+    posts.insert params[:title], params[:content]
+
+    erb :index, locals: { posts: posts.get_posts }
+end
+
+get '/create_post' do
+    erb :create_post
 end

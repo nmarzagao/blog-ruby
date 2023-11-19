@@ -1,12 +1,16 @@
+<!-- index.erb -->
 <!DOCTYPE html>
 <head>
     <title>Sinatra Blog</title>
 </head>
 <body>
     <h1>Posts</h1>
-    <% for post in posts do %>
-        <h3><%= post[0] %></h3>
-        <p><%= post[1] %></p>
+    <a href="/create_post"><button>Create Post</button></a>
+    <% if defined? posts %>
+        <% for post in posts.reverse %>
+            <h3><%= post[0] %></h3>
+            <p><%= post[1] %></p>
+        <% end %> 
     <% end %>
 </body>
 </html>
